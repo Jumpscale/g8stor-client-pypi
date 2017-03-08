@@ -3,6 +3,8 @@ This is the pypi repository used to upload the g8storclient.
 
 The binary module itself can be found here: https://github.com/nimscale/stor/
 
+The current implementation used can be found here: https://github.com/maxux/libg8stor/
+
 # Content of the package
 This package contains binaries produced from the nim-lang version of our g8stor-client.
 
@@ -21,13 +23,8 @@ This is a minimal example, more can be found on the [nimscale/stor](https://gith
 
 ```python
 from g8storclient import g8storclient
-client = g8storclient.getClientId0("172.17.0.1")
+client = g8storclient.connect("172.17.0.1")
 
-# upload and download multiple files
-uploaded = g8storclient.uploadFiles0(client, "file1, file2", 1)
-g8storclient.downloadFiles0(client, "file1, file2", uploaded)
-
-# upload and download one file
-uploaded = g8storclient.uploadFile0(client, "file1", 1)
-g8storclient.downloadFile0(client, "file1", uploaded)
+uploaded = g8storclient.upload(client, "/tmp/file")
+g8storclient.download(client, "/tmp/download", uploaded)
 ```

@@ -29,7 +29,7 @@ class g8stor_client_install_lib(install_lib):
 setup(
     name = 'g8storclient',
     packages = ['g8storclient'],
-    version = '0.1.1',
+    version = '0.1.3',
     description = 'g8os stor native driver',
     author = 'Green IT Globe',
     author_email = 'maxux@greenitglobe.com',
